@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>0xFF</title>
+  
+  <subtitle>where does this go?</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-02-01T07:33:06.790Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Nicholas Dollick</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Behavior Based De-Anonymization</title>
+    <link href="http://yoursite.com/2019/01/23/Test-Post/"/>
+    <id>http://yoursite.com/2019/01/23/Test-Post/</id>
+    <published>2019-01-24T07:18:55.000Z</published>
+    <updated>2019-02-01T07:33:06.790Z</updated>
+    
+    <content type="html"><![CDATA[<p align="center"><br>    <img src="https://i.imgur.com/2MFVX6h.png" alt="logo" width="500"><br></p><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><p>⚠ API keys and Python2.7 or are newer are required.</p><p>To generate API keys, create a ‘script’ at: <a href="https://www.reddit.com/prefs/apps/" target="_blank" rel="noopener">https://www.reddit.com/prefs/apps/</a></p><p>Next, create a file named <em>secrets.py</em> in the same folder as snooper.py.  The file contents should appear as followed:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">username  = &apos;your account username&apos;</span><br><span class="line">password  = &apos;your account password&apos;</span><br><span class="line">client_id = &apos;generated client id&apos;</span><br><span class="line">secret    = &apos;generated secret key&apos;</span><br></pre></td></tr></table></figure></p><p>Finally, install requirements using:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></p><h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">usage: snooper.py -n &lt;screen_name&gt; [options]</span><br><span class="line">options:</span><br><span class="line">-a --all              - gather dataset of both comments and posts</span><br><span class="line">-p --posts            - gather dataset of user&apos;s submitted posts</span><br><span class="line">-c --comments         - gather dataset of user&apos;s comments</span><br><span class="line">-nc --no-color        - turns off colored output</span><br><span class="line">-l --limit            - set a max amount of posts collected (default=1000)</span><br><span class="line">--new                 - gather dataset from posts sorted by new (default=top posts)</span><br><span class="line">-utc --utc-offset     - offset time information to allign with timezone(+- UTC)</span><br><span class="line">-v --verbose          - allow verbose analysis of collected data</span><br><span class="line">-vn --verbose_num     - use in conjunction with -v to limit the amount of data returned (default=5)</span><br><span class="line"></span><br><span class="line">Examples: </span><br><span class="line">snooper.py -n mctesty</span><br><span class="line">snooper.py -n mctesty -a --new -l 100</span><br><span class="line">snooper.py -n mctesty -utc -5 -nc -p</span><br></pre></td></tr></table></figure><h4 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h4><p><img src="https://i.imgur.com/mX9dvc5.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p align=&quot;center&quot;&gt;&lt;br&gt;    &lt;img src=&quot;https://i.imgur.com/2MFVX6h.png&quot; alt=&quot;logo&quot; width=&quot;500&quot;&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Instal
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/01/23/hello-world/"/>
+    <id>http://yoursite.com/2019/01/23/hello-world/</id>
+    <published>2019-01-23T08:00:00.000Z</published>
+    <updated>2019-01-31T02:07:15.913Z</updated>
+    
+    <content type="html"><![CDATA[<p>I tell you what man this right here talkin bout ol test man, dang ol yo.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public IActionResult Verify([FromBody] string captchaResponse)</span><br><span class="line">&#123;</span><br><span class="line">    if (RecaptchaResponse.Validate(captchaResponse))</span><br><span class="line">        return Ok(new &#123; result = &quot;valid &#125;)</span><br><span class="line">    </span><br><span class="line">    return Ok(new &#123; result = &quot;invalid &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="">this is what a link looks like</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I tell you what man this right here talkin bout ol test man, dang ol yo.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
+      
+    
+    </summary>
+    
+    
+      <category term="test, post, tag color" scheme="http://yoursite.com/tags/test-post-tag-color/"/>
+    
+  </entry>
+  
+</feed>

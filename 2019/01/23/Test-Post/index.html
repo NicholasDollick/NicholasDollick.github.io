@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="Why does this text come from a totally different file?">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Nicholas Dollick">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Behavior Based De-Anonymization">
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="Why does this text come from a totally different file?">
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="0xFF">
+  <!--Type page-->
+  
+      <meta property="og:type" content="article">
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Behavior Based De-Anonymization - 0xFF</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/pubkey">
+                
+                  public key
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Behavior Based De-Anonymization
+            
+          </h1>
+          <p class="posted-on">
+          2019-01-23
+          </p>
+          <div class="tags-links">
+            
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <p align="center"><br>    <img src="https://i.imgur.com/2MFVX6h.png" alt="logo" width="500"><br></p>
+
+<h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><p>⚠ API keys and Python2.7 or are newer are required.</p>
+<p>To generate API keys, create a ‘script’ at: <a href="https://www.reddit.com/prefs/apps/" target="_blank" rel="noopener">https://www.reddit.com/prefs/apps/</a></p>
+<p>Next, create a file named <em>secrets.py</em> in the same folder as snooper.py.  The file contents should appear as followed:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">username  = &apos;your account username&apos;</span><br><span class="line">password  = &apos;your account password&apos;</span><br><span class="line">client_id = &apos;generated client id&apos;</span><br><span class="line">secret    = &apos;generated secret key&apos;</span><br></pre></td></tr></table></figure></p>
+<p>Finally, install requirements using:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></p>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">usage: snooper.py -n &lt;screen_name&gt; [options]</span><br><span class="line">options:</span><br><span class="line">-a --all              - gather dataset of both comments and posts</span><br><span class="line">-p --posts            - gather dataset of user&apos;s submitted posts</span><br><span class="line">-c --comments         - gather dataset of user&apos;s comments</span><br><span class="line">-nc --no-color        - turns off colored output</span><br><span class="line">-l --limit            - set a max amount of posts collected (default=1000)</span><br><span class="line">--new                 - gather dataset from posts sorted by new (default=top posts)</span><br><span class="line">-utc --utc-offset     - offset time information to allign with timezone(+- UTC)</span><br><span class="line">-v --verbose          - allow verbose analysis of collected data</span><br><span class="line">-vn --verbose_num     - use in conjunction with -v to limit the amount of data returned (default=5)</span><br><span class="line"></span><br><span class="line">Examples: </span><br><span class="line">snooper.py -n mctesty</span><br><span class="line">snooper.py -n mctesty -a --new -l 100</span><br><span class="line">snooper.py -n mctesty -utc -5 -nc -p</span><br></pre></td></tr></table></figure>
+<h4 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h4><p><img src="https://i.imgur.com/mX9dvc5.png" alt=""></p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2019/01/23/hello-world/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">This will eventually be something meaningful</h1>
+        <div class="custom-widget-content">
+          
+          Why does this text come from a totally different file?
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/NicholasDollick" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="mailto:ndollick@protonmail.com" class="icon icon-mail" target="_blank">mail</a>
+            
+              <a href="https://linkedin.com/in/nick-dollick" class="icon icon-linkedin" target="_blank">linkedin</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onsubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>0xFF &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>C659 071B 9DDA 5E93 02E4 5629 5225 30AC 3611 6573</span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
