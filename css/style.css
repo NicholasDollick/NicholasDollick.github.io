@@ -1,8 +1,10 @@
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; 
-}
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
 
 article,
 aside,
@@ -170,7 +172,6 @@ th {
 
 body,
 html {
-  background-color: #1F2831;
   height: 100%; }
 
 /*--------------------------------------------------------------
@@ -624,6 +625,9 @@ Content
 .meta-arraw-left {
   background: url("../images/arrow-left.svg") no-repeat; }
 
+.meta-arraw-left svg {
+  fill: white; }
+
 .meta-arraw-right {
   background: url("../images/arrow-right.svg") no-repeat; }
 
@@ -690,8 +694,8 @@ Footer
   text-indent: -999em; }
   .icon.icon-github {
     background-image: url("../images/github.svg"); }
-  .icon.icon-weibo {
-    background-image: url("../images/weibo.svg"); }
+  .icon.icon-linkedin {
+    background-image: url("../images/linkedin.svg"); }
   .icon.icon-mail {
     background-image: url("../images/mail.svg"); }
   .icon.icon-twitter {
@@ -739,7 +743,7 @@ Footer
     border: none;
     box-shadow: none;
     outline: none;
-    opacity: 0.25; }
+    opacity: .7; }
 
 .header-inside {
   display: block;
@@ -795,9 +799,12 @@ Footer
 .navbar ul li:hover:before {
   width: 100%; }
 
+body {
+  background: #1F2831; }
+
 .post {
   padding-top: 5%;
-  padding-bottom: 10%; }
+  padding-bottom: 5%; }
   .post .nav-links a {
     text-decoration: none;
     color: #3a3a3a;
@@ -820,7 +827,7 @@ Footer
     z-index: 29; }
 
 .content-area {
-  background: #181E24; }
+  background: #1c242c; }
 
 .entry-title {
   color: #60C9AF; }
@@ -1056,18 +1063,25 @@ pre {
   pre .xml .cdata {
     opacity: 0.5; }
 
+body {
+  background: #1F2831; }
+
 .archive {
-  padding-bottom: 60px; }
+  padding-bottom: 30%; }
   .archive h2.year {
-    color: #444444; }
+    color: white; }
   .archive ul.list {
     padding-left: 50px; }
     .archive ul.list li {
       padding: 10px 0;
       line-height: 1.5; }
+      .archive ul.list li a {
+        color: #60C9AF; }
   .archive .date {
     margin-right: 30px;
-    color: #7f8c8d; }
+    color: #6AACEF; }
+  .archive .a {
+    color: #6AACEF; }
 
 #comment #ds-thread #ds-reset a.ds-like-thread-button {
   background-color: #fff;
@@ -1096,9 +1110,9 @@ pre {
       top: 70px;
       padding: 15px 0 15px 30px;
       width: 100%;
-      background: #efefef;
-      border-bottom: 1px solid #dcdcdc;
-      box-shadow: 0 2px 3px #dfdfdf;
+      background: #1F2831;
+      border-bottom: 1px solid white;
+      box-shadow: 0 1px 10px grey;
       z-index: 9999; }
       .site-header .navbar ul li {
         width: 100%;
